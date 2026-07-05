@@ -56,7 +56,14 @@ nav.menu button:focus-visible,.brand:focus-visible,button:focus-visible,a:focus-
 @media(prefers-reduced-motion:reduce){.page.active{animation:none}html{scroll-behavior:auto}}
 
 /* ---------- hero ---------- */
-.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.hero{position:relative;padding:88px 0 72px;border-bottom:1px solid var(--line);background:linear-gradient(rgba(12,43,51,.88),rgba(18,60,70,.82)),url('images/hero.jpg') center 30%/cover no-repeat}
+.hero h1{color:#fff}
+.hero h1 em{color:#8fd6cc}
+.hero p.lede{color:#d6e4e2}
+.hero .code{color:#8fd6cc}
+.hero .btn-primary{background:var(--amber);border-color:var(--amber)}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
+.hero .btn-ghost:hover{border-color:#fff}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
 .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 18px}
 .hero h1 em{font-style:normal;color:var(--teal)}
@@ -186,6 +193,12 @@ details p{margin-top:10px;font-size:.92rem;color:var(--muted);max-width:70ch}
 .faq details:last-of-type{border-bottom:1px solid var(--line)}
 .faq summary{font-size:.95rem}
 
+/* page banners */
+.page-banner{width:100%;height:230px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line);margin-bottom:28px;display:block}
+.divider-photo{position:relative;height:190px;background:linear-gradient(rgba(18,60,70,.55),rgba(18,60,70,.55)),url('images/divider-kpi.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.divider-photo p{color:#fff;font-family:var(--display);font-weight:700;font-size:clamp(1.1rem,2.6vw,1.5rem);text-align:center;padding:0 24px;max-width:34ch}
+@media(max-width:820px){.page-banner{height:160px}}
+
 /* reveal animation */
 .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
 .rv.in{opacity:1;transform:none}
@@ -218,8 +231,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:64px}
 <header>
   <div class="wrap nav">
     <button class="brand" onclick="go('home')" aria-label="QIO Toolkit home">
-      <span class="brand-mark">QT</span>
-      <span class="brand-name">The QIO Toolkit</span>
+      <svg viewBox="0 0 300 60" width="215" height="43" aria-hidden="true"><circle cx="30" cy="28" r="20" fill="none" stroke="#123c46" stroke-width="6"/><path d="M22 28 l7 8 l19 -20" fill="none" stroke="#147d73" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 42 l10 11" stroke="#d98a2b" stroke-width="6.5" stroke-linecap="round"/><text x="68" y="40" font-family="Bricolage Grotesque,Arial,sans-serif" font-size="30" font-weight="800" letter-spacing="-0.5" fill="#123c46">QIO<tspan fill="#147d73"> Toolkit</tspan></text></svg>
     </button>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">MENU</button>
     <nav class="menu" id="menu">
@@ -299,6 +311,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:64px}
     </div>
   </section>
 
+  <div class="divider-photo" aria-hidden="true"><p>Built by a working quality officer — for the people doing the work.</p></div>
+
   <section class="section rv">
     <div class="wrap">
       <div class="section-head">
@@ -336,6 +350,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:64px}
   <section class="section" style="border-top:none">
     <div class="wrap">
       <div class="section-head">
+        <img class="page-banner" src="images/learn-banner.jpg" alt="Healthcare professional starting a career in quality improvement" loading="lazy">
         <span class="code">QT-LRN · For aspiring &amp; new officers</span>
         <h2>Learn the role</h2>
         <p>Quality improvement has its own language. These pages translate it into plain terms so you can be useful from week one — in any country, under any accreditation system.</p>
@@ -437,6 +452,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:64px}
   <section class="section" style="border-top:none">
     <div class="wrap">
       <div class="section-head">
+        <img class="page-banner" src="images/tools-banner.jpg" alt="Quality officer working in a meeting room" loading="lazy">
         <span class="code amber">QT-TLS · For working officers</span>
         <h2>Tools for the job</h2>
         <p>Generic, editable, and accreditation-agnostic. Every template ships blank with instructions built in — adapt the header to your facility and your standards, and it's yours.</p>
@@ -639,6 +655,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:64px}
   <section class="section" style="border-top:none">
     <div class="wrap">
       <div class="section-head">
+        <img class="page-banner" src="images/about-banner.jpg" alt="Quality professional reviewing performance charts" loading="lazy">
         <span class="code">QT-ABT-01</span>
         <h2>About this project</h2>
       </div>
